@@ -31,6 +31,8 @@ The objective was to ingest three raw datasets, assess and validate their qualit
 
 Rather than applying transformations immediately, the pipeline first profiles and validates the raw data so that any data quality issues can be identified and addressed before processing.
 
+![Pipeline Workflow](images/workflow.svg)
+
 The workflow follows a layered approach:
 
 ```
