@@ -9,15 +9,15 @@ This repository contains my solution to the data engineering take-home assessmen
 
 | File | Purpose |
 |---|---|
-| `case_study_solution.ipynb` | The primary deliverable. A fully commented Jupyter notebook walking through every step of the process — data review, decisions, validation, transformations, and analysis — with the reasoning behind each decision. **Start here for the detailed write-up.** |
+| `case_study_solution.ipynb` | The primary deliverable. A fully commented Jupyter notebook walking through every step of the process which includes: data review, decisions, validation, transformations, and analysi. It also includes the reasoning behind each decision. **Start here for the detailed write-up.** |
 | `case_study.py` | A runnable script version of the notebook. Produces the same store/publish tables and the same two analysis answers, without the exploratory commentary. Useful for running the pipeline end to end from the command line. |
-| `workflow.svg` | A diagram of the pipeline's architecture/workflow (see below). |
+| `images/workflow.svg` | A diagram of the pipeline's architecture/workflow (see below). |
 
-The notebook is where the thinking lives — assumptions, findings, and the "why" behind each transformation. The script is the "just run it" version of that same logic.
+The notebook is where the thinking lives: assumptions, findings, and the "why" behind each transformation. The script is the "just run it" version of that same logic.
 
 ## Architecture / workflow
 
-![Pipeline architecture](workflow.svg)
+![Pipeline architecture](images/workflow.svg)
 
 The pipeline moves through six stages:
 
@@ -61,7 +61,7 @@ These are the issues the review surfaced in the raw data, and how each was resol
 1. **Which colour generated the highest revenue each year?** `publish_orders` is joined to `publish_product` on `ProductID`, revenue (`TotalLineExtendedPrice`) is summed by year and colour, and the top colour per year is ranked out.
 2. **What is the average `LeadTimeInBusinessDays` by `ProductCategoryName`?** `publish_orders` is joined to `publish_product` on `ProductID`, and the average lead time is calculated per category (categories with no name are excluded).
 
-Both answers are printed when `de_pipeline.py` runs, and are shown with full working in `de.ipynb`.
+Both answers are printed when `case_study.py` runs, and are shown with full working in `case_study_solution.ipynb`.
 
 ## Running the pipeline
 
@@ -72,39 +72,27 @@ Both answers are printed when `de_pipeline.py` runs, and are shown with full wor
 
 **Steps:**
 1. Clone the repo and place `products.csv`, `sales_order_header.csv`, and `sales_order_detail.csv` in a data folder.
-2. Open `de_pipeline.py` and update the `DATA_DIR` and `OUTPUT_DIR` constants at the top of the file to point at your data folder and desired output folder.
+2. Open `case_study.py` and update the `DATA_DIR`constant at the top of the file to point at your data folder.
 3. Run:
    ```bash
-   python de_pipeline.py
+   python case_study.py
    ```
-4. The two analysis answers print to the console, and the `publish_product` / `publish_orders` tables are written to `OUTPUT_DIR` as CSV.
-
+4. The two analysis answers print to the console.
 To follow the full reasoning behind each decision, open `case_study_solution.ipynb` in Jupyter.
 
 
 ---
 
-# Repository Structure
 
-```text
-.
-├── README.md
-├── notebook/
-│   └── data_engineering_take_home_assessment.ipynb
-├── take_home_assessment.py
-├── data/
-│   ├── products.csv
-│   ├── sales_order_header.csv
-│   └── sales_order_detail.csv
-└── .gitignore
-```
+## Project Structure
 
 | File | Description |
-|------|-------------|
-| **case_study_solution.ipynb** | Primary deliverable containing the complete assessment, documentation, validation and analysis. |
-| **case_Study.py** | Standalone Python implementation of the same pipeline. |
+| :--- | :---------- |
+| **case_study_solution.ipynb** | Primary deliverable containing the complete assessment, documentation, validation, and analysis. |
+| **case_study.py** | Standalone Python implementation of the same pipeline. |
 | **data/** | Source datasets used throughout the assessment. |
 | **README.md** | Project overview and implementation summary. |
+
 
 ---
 
