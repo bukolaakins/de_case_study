@@ -9,7 +9,7 @@ This repository contains my solution to the data engineering take-home assessmen
 
 | File | Purpose |
 |---|---|
-| `case_study_solution.ipynb` | The primary deliverable. A fully commented Jupyter notebook walking through every step of the process which includes: data review, decisions, validation, transformations, and analysi. It also includes the reasoning behind each decision. **Start here for the detailed write-up.** |
+| `case_study_solution.ipynb` | The primary deliverable. A fully commented notebook walking through every step of the process which includes: data review, decisions, validation, transformations, and analysi. It also includes the reasoning behind each decision. **Start here for the detailed write-up.** |
 | `case_study.py` | A runnable script version of the notebook. Produces the same store/publish tables and the same two analysis answers, without the exploratory commentary. Useful for running the pipeline end to end from the command line. |
 | `images/workflow.svg` | A diagram of the pipeline's architecture/workflow (see below). |
 
