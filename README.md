@@ -1,6 +1,6 @@
 # Data Engineering Take-Home Assessment
 
-**Candidate:** Bukola Akinsola
+**By::** Bukola Akinsola
 
 ## 📘 Start Here
 This repository contains my solution to the data engineering take-home assessment: an end-to-end PySpark pipeline that ingests raw source data, reviews and standardises it, validates its quality, applies the required business transformations, and answers two analysis questions.
